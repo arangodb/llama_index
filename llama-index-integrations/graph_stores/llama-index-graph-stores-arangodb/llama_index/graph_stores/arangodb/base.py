@@ -6,7 +6,7 @@ from llama_index.core.graph_stores.types import GraphStore
 from arango import ArangoClient
 
 
-    """Abstract graph store protocol.
+"""Abstract graph store protocol.
 
     This protocol defines the interface for a graph store, which is responsible
     for storing and retrieving knowledge graph data.
@@ -21,16 +21,34 @@ from arango import ArangoClient
         persist: Callable[[str, Optional[fsspec.AbstractFileSystem]], None]:
             Persist the graph store to a file.
         get_schema: Callable[[bool], str]: Get the schema of the graph store.
-    """
+ """
 
 class ArangoDBGraphStore(GraphStore):
-    def __init__() -> None:
+    def __init__(
+        self,
+        arangodb_host : str = None,
+        username : str = None,
+        password : str = "_system",
+        database : str = None,
+        ) -> None:
+        self.arangodb_host = arangodb_host
+        self.username = username
+        self.password = password
+        self.database = database
+        self.client = None
+        try:
+            self.client =  ArangoClient(hosts="")
+            self.db_handle = client.db(self.databasedatabase, username=self.username, password=self.password)
+        except:
+            print("Error connecting to ArangoDB")
+
  
     #  client: Any: The client used to connect to the graph store.
     @property
     def client(self) -> Any:
         return None
-        
+        client = ArangoClient(hosts="http://localhost:8529")
+
     #  get: Callable[[str], List[List[str]]]: Get triplets for a given subject.
     def get(self, subj: str) -> List[List[str]]:
         return None

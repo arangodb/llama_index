@@ -1,3 +1,1 @@
-# LlamaIndex Graph Stores Integration: ArangoDB
-
-TODO add link to sample notebook
+# LlamaIndex Graph_Stores Integration: Arangodb
