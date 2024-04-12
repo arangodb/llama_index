@@ -25,7 +25,7 @@ python_version = "3.8"
 
 [tool.poetry]
 name = "llama-index-graph-stores-arangodb"
-version = "0.1.0"
+version = "0.1.2"
 description = "llama-index graph_stores arangodb integration"
 authors = ["Your Name <you@example.com>"]
 license = "MIT"
