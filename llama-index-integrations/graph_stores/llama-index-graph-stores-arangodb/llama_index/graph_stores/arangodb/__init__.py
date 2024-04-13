@@ -1,4 +1,4 @@
-from llama_index.graph_stores.arangodb.base import <FILL>
+from llama_index.graph_stores.arangodb.base import ArangoDBGraphStore
 
 
-__all__ = ["<FILL>"]
+__all__ = ["ArangoDBGraphStore"]
